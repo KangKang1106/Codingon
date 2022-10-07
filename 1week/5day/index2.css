@@ -1,0 +1,30 @@
+/* div 안데 div 가운데 정렬 */
+.outer {
+  width: 300px;
+  height: 300px;
+  background-color: gray;
+}
+
+.inner {
+  width: 100px;
+  height: 100px;
+  background-color: antiquewhite;
+}
+
+/* ver. position, transform */
+.outer1 {
+  position: relative;
+}
+.inner1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* ver. display: flex */
+.outer2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

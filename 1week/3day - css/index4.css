@@ -1,0 +1,79 @@
+/* 
+  단일 선택자
+  - 전체 : * {}
+  - 태그 : 태그명 {}
+  - 클래스 : .클래스명 {}
+  - 아이디 : #아이디명 {}
+*/
+/* * {
+  color: #220158;
+}
+
+li {
+  color: #ff0000;
+}
+
+.orange {
+  color: orange;
+}
+
+div.orange {
+  color: brown;
+}
+
+#orange {
+  color: blue;
+} */
+
+/* 
+  여러 선택자를 동시에 지정
+  - , 를 이용해 여러 선택자에 동시 지정
+*/
+/* ul, p, .orange {
+  color: green;
+} */
+
+/*
+  복합 형제 선택자
+  - 하위 : A B
+  - 자식 : A > B
+  - 인접 형제 : A + B
+  - 일반 형제 : A ~ B
+*/
+/* 하위 선택자 */
+div .orange {
+  color: orange;
+}
+
+/* 자식 선택자 */
+ul > .orange {
+  color: red;
+}
+
+/* 인접 형제 선택자
+    A + B
+    조건1. A, B 같은 레벨
+    조건2. B가 A의 바로 뒤에
+*/
+ul + .orange {
+  color: green;
+}
+
+/* 조건2에 위배되어 적용되지 않음 */
+ul + span.orange {
+  color: violet;
+}
+
+/* 일반 형제 선택자
+    A ~ B
+    조건1. A, B 같은 레벨
+    조건2. B는 A보다 뒤에 위치
+*/
+div.orange ~ span {
+  color: blue;
+}
+
+/* 조건2에 위배되어 적용되지 않음 */
+div.orange ~ ul {
+  color: blue;
+}

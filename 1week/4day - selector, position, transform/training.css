@@ -1,0 +1,73 @@
+* {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.whiteeye {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 2;
+  top: 100px;
+  left: 90px;
+}
+.blackeye {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 3;
+  top: 110px;
+  left: 90px;
+}
+.circle1 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(58, 126, 228);
+  border-radius: 50%;
+  z-index: 1;
+  top: 80px;
+  left: 70px;
+}
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(28, 101, 211);
+  border-radius: 50%;
+  z-index: 2;
+  top: 135px;
+  left: 125px;
+}
+.circle3 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(14, 43, 85);
+  border-radius: 50%;
+  z-index: 3;
+  top: 180px;
+  left: 170px;
+}
+.circle4 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(164, 193, 236);
+  border-radius: 50%;
+  z-index: 4;
+  top: 230px;
+  left: 190px;
+}
+.circle5 {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(22, 138, 174);
+  border-radius: 50%;
+  z-index: 6;
+  top: 270px;
+  left: 250px;
+}
+.grass {
+  top: 250px;
+  left: 0px;
+  z-index: 5;
+}

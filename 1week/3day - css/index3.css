@@ -1,0 +1,101 @@
+body {
+  /* 기본 폰트는 보통 body 태그에 작성 */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+  font-family: 'Jua', sans-serif;
+}
+
+pre {
+  font-family: 'Dangrek', cursive;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  border-left: 10px dashed red;
+  border-right: 10px dashed red;
+}
+
+div {
+  /* 색상 */
+  color: royalblue;
+  /* background-color: pink; */
+  /* background: linear-gradient(yellow, pink); */
+  /* background: linear-gradient(to right top, yellow, pink); */
+  background: linear-gradient(90deg, yellow, pink);
+  
+  /* 폰트 */
+  /* [font-size] px 단위 */
+  /* 1px : 1/96인치 -> 절대단위 */
+  font-size: 50px;
+
+  /* [font-weight] 굵기 */
+  /* lighter normal bold bolder */
+  /* font-weight: bold; */
+  /* 100 ~ 900 */
+  font-weight: 700;
+
+  /* [font-family] 글씨체 */
+  /* serif sans-serif monospace cursive */
+  /* font-family: cursive; */
+  /* 여러개 설정시 선언된 순서로 적용함 */
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* 영어, 한글 글꼴 다르게 - 한글 없는 폰트를 먼저 -> 한글 폰트*/
+  /* font-family: Georgia, "Malgen Gothic"; */
+
+  /* [web font] */
+  /* 모든 사용자가 동일한 폰트로 화면을 볼 수  있음 */
+  /* Google font */
+
+  /* [font-sytle] 글자 모양 */
+  /* italic oblique */
+  /* italic - 필기체 느낌 */
+  /* oblique - 보통 모양의 기울임 */
+  font-style: oblique;
+
+  /* 크기 */
+  width: 600px;
+  /* height: 600px; */
+
+  /* 테두리, 경계선 */
+  /* style 지정해야 width, color가 의미 있음 */
+  /* solid dotted dashed inset */
+  /* border-style: solid;
+  border-width: 4px;
+  border-color: black; */
+
+  /* border 단출 프로피티 */
+  /* border: width, style, color 한 번에 설정 */
+  border: 4px solid black;
+
+  /* border-radius: 5px 30px; */
+  /* border-radius: 5px 20px 45px 80px; */
+  /* border-left: 4px solid black;
+  border-right: 4px solid black; */
+
+  /* 박스 모델 */
+  /* 요소의 너비와 높이를 계산하는 방식 지정 */
+  /* content -> padding -> border -> margin */
+  /* box-sizing : content-box; */
+  box-sizing: border-box;
+
+  /* margin, padding */
+  /* padding : content와 border 사이의 공간 */
+  /* margin : border 바깥 공간 */
+  padding: 20px 3px;
+  margin: 50px 10px;
+}
+
+p {
+  font-size: 50px;
+  font-weight: 700;
+
+  width: 400px;
+  border: 1px solid black;
+  /* 그림자 */
+  /* box-shadow */
+  /* box-shadow : xoffset, yoffset, blur, color */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .4);
+  
+  /* text-shadow */
+  text-shadow: 1px 10px 20px red;
+}

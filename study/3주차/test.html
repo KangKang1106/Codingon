@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+    }
+
+    .test {
+      background-color: black;
+      color: white;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div>안녕하세요</div>
+  <script>
+    let a = document.querySelector('div');
+    a.addEventListener('click', function () {
+      // a.style.backgroundColor = 'black';
+      // a.style.color = 'white';
+      // a.style.fontWeight = 'bold';
+      a.classList.toggle('test');
+      // a.classList.contains('test');
+    })
+  </script>
+</body>
+</html>

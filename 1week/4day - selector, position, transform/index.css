@@ -1,0 +1,85 @@
+/* 
+  가상 선택자
+  - E:hover : E 요소에 마우스가 올라가 있는 동안
+  - E:active : E 요소에 마우스를 클릭하는 동안
+  - E:visited : E 요소가 링크일 때, 한번 클릭하여 접속한 이력이 있을 때
+*/
+#google:hover {
+  font-weight: 700;
+  color: orangered;
+}
+#naver:active {
+  font-weight: 700;
+  color: palevioletred;
+}
+#daum:visited {
+  color: gray;
+}
+
+/* .fruits span:first-child {
+  color: red;
+} */
+
+/* p 태그가 .fruits의 첫번째 자식이 아니므로 적용되지 않음 */
+/* .fruits p:first-child {
+  color: red;
+}
+
+.fruits h3:last-child {
+  color: red;
+}
+
+.fruits *:nth-child(2) {
+  color: green;
+}
+
+/* 괄호안에 공식을 이용해서 여러개를 선택 가능 */
+/* .fruits *:nth-child(2n-1) {
+  color: green;
+} */
+
+.fruits *:not(span) {
+  color: blue;
+}
+
+.numbers {
+  font-size: 30px;
+}
+
+/* .numbers span:nth-child(odd) {
+  color: green;
+}
+
+.numbers span:nth-child(even) {
+  color: orange;
+} */
+
+.numbers span:nth-child(3n+4) {
+  color: blue;
+}
+
+/* CSS 우선순위 */
+.test {
+  font-size: 30px;
+}
+
+/* 전체 선택자 */
+.test * {
+  color: gray;
+}
+
+/* 태그 선택자 > 전체 선택자 */
+/* !important >>>>>> * */
+.test span {
+  color: blue !important;
+}
+
+/* ,클래스 선택자 > 태그 선택자 */
+.test .num {
+  color: green;
+}
+
+/* 아이디 선택자 > 클래스 선택자 */
+.test #two {
+  color: red;
+}

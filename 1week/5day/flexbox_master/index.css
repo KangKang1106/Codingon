@@ -1,0 +1,60 @@
+/* common */
+* {
+    box-sizing: border-box;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    background-color: rgb(149, 77, 77);
+}
+
+main {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+    /* align-content: space-between; */
+}
+
+nav {
+    background-color: rgb(57, 72, 125);
+}
+
+aside {
+    width: 10%;
+    height: 500px;
+    /* height: 500px; */
+    background-color: pink;
+}
+
+article {
+    height: 25%;
+}
+
+section {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: ; */
+}
+
+section *:nth-child(2n+1) {
+    background-color: aquamarine;
+}
+
+section *:nth-child(2n+2) {
+    background-color: rgb(233, 196, 61);
+}
+
+footer {
+    background-color: rgb(131, 140, 211);
+}
+
+/* TODO: HTMl에 대해 배울 때, semactic tag에 대해 배웠었죠? 
+복습할 겸 flex를 이용해 시멘틱 웹을 구성해주세요. */

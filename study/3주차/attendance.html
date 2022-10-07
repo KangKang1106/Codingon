@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300;700&display=swap" rel="stylesheet">
+    <title>Attendance</title>
+
+    <style>
+        body { 
+            margin: 0;
+            font-family: 'Gemunu Libre', sans-serif;
+        }
+        header {
+            height: 50px;
+            background-color: black;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 30px;
+        }
+        table {
+            font-size: 25px;
+            text-align: center;
+        }
+        td {
+            width: 100px;
+            height: 50px;
+            /* cursor: pointer; */
+        }
+        main {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .attendance {
+            width: 280px;
+            height: 280px;
+            background-image: url(./check.png);
+            background-size: cover;
+            /* opacity: 0.5; */
+        }
+        .tardy {
+            width: 280px;
+            height: 280px;
+            background-image: url(./pngegg.png);
+            background-size: cover;
+            /* opacity: 0.5; */
+        }
+        .absent {
+            width: 280px;
+            height: 280px;
+            background-image: url(./x.png);
+            background-size: cover;
+            /* opacity: 0.5; */
+        }
+        .checkTd {
+            background-color: gray;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header><b>CodeOn 3기 출석부</b></header>
+    <nav><!-- 날짜 기입 -->asd</nav>
+    <main>
+        <section>
+            <table border="1" cellpadding="20" cellspacing="0">
+                <tr>
+                    <td class="checkName">강민선</td>
+                    <td>강민성</td>
+                    <td>김영훈</td>
+                    <td>김예나</td>
+                    <td>김유정</td>
+                    <td>김재란</td>
+                </tr>
+                <tr>
+                    <td>김현아</td>
+                    <td>남궁수정</td>
+                    <td>문준영</td>
+                    <td>박수민</td>
+                    <td>백종민</td>
+                    <td>서승원</td>
+                </tr>
+                <tr>
+                    <td>신진영</td>
+                    <td>염정호</td>
+                    <td>오성인</td>
+                    <td>이명관</td>
+                    <td>이지우</td>
+                    <td>이혜승</td>
+                </tr>
+                <tr>
+                    <td>임태욱</td>
+                    <td>정지윤</td>
+                    <td>조민희</td>
+                    <td>조부희</td>
+                    <td>천현승</td>
+                    <td>최대훈</td>
+                </tr>
+                <tr>
+                    <td>최재인</td>
+                    <td>길동혁</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </section>
+        <aside>
+            <div class="attendance"></div>
+            <div class="tardy"></div>
+            <div class="absent"></div>
+        </aside>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./attendance.js"></script>
+</body>
+</html>

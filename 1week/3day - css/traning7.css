@@ -1,0 +1,20 @@
+h2 {
+  text-align: center;
+  color: green;
+}
+
+table {
+  text-align: center;
+}
+
+.sunday {
+  color: red;
+}
+
+.saturday {
+  color: blue;
+}
+
+.holiday {
+  color: red;
+}
