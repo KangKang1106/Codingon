@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 18. 이미지 바꾸기</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <style>
+    .mainBorder {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    img {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 5px solid orange;
+      border-radius: 10px;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button {
+      font-size: 20px;
+      background-color: black;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mainBorder">
+    <img src="./image/q.jpg" alt="물음표">
+    <div class="fruitBtn">
+      <button onclick="apple();">사과</button>
+      <button onclick="banana();">바나나</button>
+      <button onclick="grape();">포도</button>
+      <button onclick="peach();">복숭아</button>
+    </div>
+  </div>
+
+  <script src="./training18.js"></script>
+</body>
+</html>
