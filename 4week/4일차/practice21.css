@@ -1,0 +1,26 @@
+body {
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .box {
+    background-color: aqua;
+  }
+}
