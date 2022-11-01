@@ -17,25 +17,25 @@ app.get('/', function(req, res) { // GET / (http://localhost:PORT)
   res.render('index', {title: '폼 전송을 배워보자', desc: '여기는 설명'}); // views/index.ejs 파일을 찾아서 클라이언트에게 응답
 });
 
-// app.get('/', function(req, res) {
-//   res.render('practice25');
-// });
+app.get('/practice25', function(req, res) {
+  res.render('practice25');
+});
 
-// app.get('/practice26', function(req, res) {
-//   res.render('practice26');
-// });
+app.get('/practice26', function(req, res) {
+  res.render('practice26');
+});
 
-// app.get('/practice27', function(req, res) {
-//   res.render('practice27');
-// });
+app.get('/practice27', function(req, res) {
+  res.render('practice27');
+});
 
-// app.get('/getinfor', function(req, res) {
-//   res.render('result2', {title: '실습26. 폼 전송 완료', userInfo: req.query});
-// });
+app.get('/getinfor', function(req, res) {
+  res.render('result2', {title: '실습26. 폼 전송 완료', userInfo: req.query});
+});
 
-// app.post('/postinfor', function(req, res) {
-//   res.render('result3', {title: '실습27. 폼 전송 완료', userInfo: req.body});
-// });
+app.post('/postinfor', function(req, res) {
+  res.render('result3', {title: '실습27. 폼 전송 완료', userInfo: req.body});
+});
 
 app.get('/getForm', function (req, res) {
   // GET 요청은 req.query 객체에 폼 정보가 전달
