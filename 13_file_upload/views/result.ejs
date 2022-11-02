@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .main {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .result {
+      width: 300px;
+      background-color: white;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+
+    img {
+      width: 250px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="result">
+      <img src="<%= profile %>" alt="profile">
+      <div><%= userInfo.id %> 님 환영합니다</div><br>
+      <div>비밀번호 : <%= userInfo.pw %></div>
+      <div>이름 : <%= userInfo.name %></div>
+      <div>나이 : <%= userInfo.age %></div>
+    </div>
+  </div>
+</body>
+</html>
