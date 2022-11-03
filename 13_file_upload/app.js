@@ -20,16 +20,16 @@ const uploadDetail = multer({
       // req: 요청에 대한 정보
       // file: 파일에 대한 정보
       // done: 함수
-      // const ext = path.extname(file.originalname); // file.originalname에서 "확장자" 추출
-      const ext = path.extname(req.body.id);
+      const ext = path.extname(file.originalname); // file.originalname에서 "확장자" 추출
+      // const ext = path.extname(req.body.id);
 
       console.log(file.originalname); // 파일명.확장자명
       console.log(ext); // .png
     
       console.log(path.basename(file.originalname, ext)); // 파일명 
 
-      done(null, path.basename(req.body.id, ext) + Date.now() + ext);
-      // done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+      // done(null, path.basename(req.body.id, ext) + Date.now() + ext);
+      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
 
       // [파일명+현재시간.확장자] 이름으로 바꿔서 파일 업로드
       // 현재시간: 파일명이 겹치는 것을 막기 위함
@@ -106,6 +106,16 @@ app.post('/upload/fields', uploadDetail.fields(
     res.send('Upload Multiple Each');
   }
 );
+
+// 4. 동적 파일 업로드
+app.post('/dynamicFile', uploadDetail.single('dynamicFile'),
+  function(req, res) {
+    console.log(req.file);
+    res.send(req.file);
+  }
+);
+
+
 
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
