@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>universal</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/footers/"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./static/css/footer.css" />
+
+    <link rel="stylesheet" href="/static/css/themepark.css" />
+    <link rel="stylesheet" href="/static/css/universal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="body">
+    <%- include('./themepark.ejs')%>
+    <main>
+      <section>
+        <div>
+          <img
+            class="parkImage"
+            src="../static/image/themepark/Disney.png"
+            alt="테마파크이미지"
+          />
+        </div>
+      </section>
+      <div class="side">
+        <aside>
+          <div class="parkName">디즈니 파크</div>
+          <hr />
+          <div class="parkText">
+            1955년 7월 17일에 개장한, 세계 최초의 테마파크이자 최초의
+            디즈니랜드다. 영국 BBC에서 죽기 전에 가봐야 할 50곳 중 3위로
+            선정했다. 어린이들의 꿈을 이뤄주는 장소로, 특히 디즈니 공주 캐릭터를
+            좋아하는 어린 여자아이들에게는 가보는 게 소원일 정도.그야말로
+            아이들의 로망. 디즈니랜드의 성공으로 디즈니사는 올랜도와 도쿄, 파리,
+            홍콩, 상하이 등지에도 디즈니랜드 리조트를 건설하였다.
+          </div>
+        </aside>
+        <div class="btn">
+          <a
+            class="youtube"
+            href="https://www.youtube.com/watch?v=zvcag08s3ng"
+            target="_blank"
+            ><i class="bi bi-youtube"></i
+          ></a>
+          <a
+            class="homepage"
+            href="https://disneyland.disney.go.com/destinations/disneyland/?CMP=OKC-330339_GM_DLR_destination_disneylandpark_NA"
+            target="_blank"
+            ><i class="bi bi-link"></i
+          ></a>
+        </div>
+      </div>
+    </main>
+
+    <script src="../static/js/themepark.js"></script>
+    <script src="../static/js/parklink.js"></script>
+
+    <%- include('./footer.ejs')%>
+  </body>
+</html>

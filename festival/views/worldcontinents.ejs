@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/worldcontinents.css">
+    <!-- footer header 파일-->
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/footers/"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./static/css/footer.css" />
+
+    
+
+    <style>
+    @font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+    </style>
+ 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="/static/js/PageChange.js"></script>
+ 
+    
+</head>
+<body>
+
+    <%- include('./navigation.ejs')%>
+    <div class="map">
+        <img class="w1" src="/static/image/flag/continents6.jpg" alt="대륙" >
+        
+        <div>
+            <img class="icon t1" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f1" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+
+
+        <div>
+            <img class="icon t2" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f2" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+
+        <div>
+            <img class="icon t3" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f3" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+        <div>
+            <img class="icon t4" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f4" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+        <div>
+            <img class="icon t5" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f5" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+        <div>
+            <img class="icon t6" src="/static/image/pin2.png" alt="깃발">
+            <div>
+                <img id="f6" src="/static/image/flight5.png" alt="비행기">
+            </div>
+        </div>
+
+
+
+        <p>icon을 클릭해주세요</p>
+
+
+        
+        <div class="card1">
+            <div class="cardPosition">
+                <div class="div1" onclick="china();">
+                    <img src="/static/image/flag/china1.png" alt="중국">
+                <div class="go"> click! </div>
+                
+                </div>
+                <div class="div2" onclick="japan();">
+                    <img src="/static/image/flag/japan.jpg" alt="일본">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div3" onclick="tailand();">
+                    <img src="/static/image/flag/thai1.png" alt="태국">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div4" onclick="vietnam();"> 
+                    <img src="/static/image/flag/viet1.png" alt="베트남">
+                    <div class="go"> click! </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+        <div class="card2">
+            <div class="cardPosition">
+                <div class="div5" onclick="eygpt();">
+                    <img src="/static/image/flag/eg.png" alt="이집트">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div6" onclick="molicious();">
+                    <img src="/static/image/flag/mauri.png" alt="모리셔스">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div7" onclick="moroco();">
+                    <img src="/static/image/flag/moroco.png" alt="모로코">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div8" onclick="southafrica();"> 
+                    <img src="/static/image/flag/sa.png" alt="남아프리카">
+                    <div class="go"> click! </div>
+                </div>
+        </div>
+        </div>
+
+
+        <div class="card3">
+            <div class="cardPosition">
+                <div class="div9" onclick="canada();">
+                    <img src="/static/image/flag/canada.png" alt="캐나다">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div10" onclick="usa();">
+                    <img src="/static/image/flag/usa.png" alt="미국">
+                    <div class="go"> click! </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card4">
+            <div class="cardPosition">
+                <div class="div11" onclick="australia();">
+                    <img src="/static/image/flag/au.png" alt="호주">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div12" onclick="newzealand();">
+                    <img src="/static/image/flag/nz.png" alt="뉴질랜드">
+                    <div class="go"> click! </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card5">
+            <div class="cardPosition">
+                <div class="div13" onclick="swiss();">
+                    <img src="/static/image/flag/ch.png" alt="스위스">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div14" onclick="spain();">
+                    <img src="/static/image/flag/es.png" alt="스페인">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div15" onclick="netherland();">
+                    <img src="/static/image/flag/nl.png" alt="네덜란드">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div16" onclick="finland();"> 
+                    <img src="/static/image/flag/fi.png" alt="핀란드">
+                    <div class="go"> click! </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card6">
+            <div class="cardPosition">
+                <div class="div17" onclick="chille();">
+                    <img src="/static/image/flag/cl.png" alt="칠레">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div18" onclick="brazil();">
+                    <img src="/static/image/flag/br.png" alt="브라질">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div19" onclick="cuba();">
+                    <img src="/static/image/flag/cu.png" alt="쿠바">
+                    <div class="go"> click! </div>
+                </div>
+                <div class="div20" onclick="mexico();"> 
+                    <img src="/static/image/flag/mx.png" alt="멕시코">
+                    <div class="go"> click! </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <%- include('./footer.ejs')%>
+
+    <script src="/static/js/worldcontinents.js"></script>
+</body>
+</html>

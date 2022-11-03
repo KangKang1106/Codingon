@@ -1,0 +1,57 @@
+<div>
+    <script src="/static/js/PageChange.js"></script>
+    <link rel="stylesheet" href="/static/css/navigation.css">
+    <header class=" header">
+        <img src="/static/img/LOGO1.png" alt="LOGO">
+
+        <a href="#" class="icon-menu">
+            <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="rgb(256,256,256)"
+        class="bi bi-list"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+        </a>
+        <nav class="menu_bar">
+            <ul>
+                <li> <div onclick="korea();"><button class="menu">국내여행</button> </div></li>
+                <li> <div onclick="universal();"><button class="menu">테마파크 </button> </div></li>
+                <li> <div onclick="festival();"><button class="menu">축제</button></div></li>
+                <li> <div onclick="mbti();"><button class="menu">MBTI</button></div></li>
+                <li> <div onclick="description()"><button class="menu">설명</button></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="toggle_menu_bar d-none">
+        <ul class="toggle-menu-container">
+            <li> <div onclick="korea();" class="toggl_menu" target="_blank">국내여행 </div></li>
+            <li> <div onclick="universal();" class="toggl_menu" target="_blank">테마파크  </div></li>
+            <li> <div onclick="festival();" class="toggl_menu" target="_blank">축제</div></li>
+            <li> <div onclick="mbti();" class="toggl_menu" target="_blank">MBTI</div></li>
+            <li> <div onclick="description()" class="toggl_menu" target="_blank">설명</div></li>
+        </ul>
+    </nav>
+
+
+                
+
+    <script>
+        const iconMenu = document.querySelector('.icon-menu');
+        const toggleMenu = document.querySelector('.toggle_menu_bar');
+        iconMenu.addEventListener('click', function () {
+          toggleMenu.classList.toggle('d-none');
+        });
+    </script>
+
+
+    
+
+</div>

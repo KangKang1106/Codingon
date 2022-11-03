@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "twayair";
+}
+
+.dropdown {
+  width: 80%;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  height: 6rem;
+  opacity: 80%;
+  /* background-color: white; */
+  z-index: 2;
+}
+
+ul {
+  list-style: none;
+}
+
+.mainBtn {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.2vw;
+  margin-bottom: 2rem;
+}
+
+#country {
+  font-size: 1.8vw;
+}
+
+.america,
+.asia,
+.europe,
+.middleEast,
+.oceania {
+  width: 12vw;
+  text-align: center;
+}
+
+.america:hover {
+  border-radius: 1rem;
+  color: white;
+  background-color: black;
+}
+.asia:hover {
+  border-radius: 1rem;
+  color: white;
+  background-color: black;
+}
+.europe:hover {
+  border-radius: 1rem;
+  color: white;
+  background-color: black;
+}
+.middleEast:hover {
+  border-radius: 1rem;
+  color: white;
+  background-color: black;
+}
+.oceania:hover {
+  border-radius: 1rem;
+  color: white;
+  background-color: black;
+}
+
+.xBtn1,
+.xBtn2,
+.xBtn3,
+.xBtn4,
+.xBtn5 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  font-size: 3vw;
+}
+
+.listAmerica,
+.listAsia,
+.listEurope,
+.listMiddleEast,
+.listOceania {
+  display: none;
+  height: 18vh;
+}
+
+.countryText {
+  width: 15vw;
+  /* background-color: aqua; */
+}
+
+.usa,
+.vietnam,
+.netherlands,
+.dubai,
+.australia {
+  position: relative;
+}
+
+.countryText:hover {
+  font-weight: 600;
+}
+
+.dropdown_menu-6 {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  width: 100%;
+  height: 40vh;
+  background-color: white;
+}
+
+.themeparkUSA {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkBrazil {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkVietnam {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkJapan {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkChina {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkKorea {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkNetherlands {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkDenmark {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkGermany {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkRomania {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkSpain {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkUK {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkFrance {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkDubai {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkArab {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+.themeparkAustralia {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 16.5vw;
+  height: 100%;
+}
+
+#themepark {
+  text-decoration: none;
+  color: black;
+  text-align: left;
+}
+
+#themepark:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+@keyframes dropdown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(3rem);
+  }
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  80% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media all and (max-width: 320px) {
+}
+@media all and (min-width: 321px) and (max-width: 768px) {
+  .dropdown_menu-6 {
+    height: 20vh;
+  }
+}
+@media all and (min-width: 769px) and (max-width: 1024px) {
+}
+@media all and (min-width: 1025px) {
+}

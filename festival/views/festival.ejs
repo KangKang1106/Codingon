@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festival</title>
+
+    <!-- footer header -->
+
+    <link rel="stylesheet" href="./static/css/footer.css" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.2/examples/footers/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/css/festival.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+
+  </head>
+  <body>
+    <div class="mainBody">
+      <div class="selectContainer">
+        <p>
+          나는
+          <select name="cultureType" class="cultureType">
+            <option value="전통문화">전통 문화</option>
+            <option value="문화예술">문화 예술</option>
+          </select>
+          축제를 즐기고 싶어요.
+        </p>
+        <p>
+          <select name="season" class="season">
+            <option value="봄">봄</option>
+            <option value="여름">여름</option>
+            <option value="가을">가을</option>
+            <option value="겨울">겨울</option>
+          </select>
+          계절의
+          <select name="time" class="time">
+            <option value="낮">낮</option>
+            <option value="밤">밤</option>
+          </select>
+          시간대에 있는 축제를 알고 싶어요.
+        </p>
+        <button class="search">축제 찾아보기</button>
+      </div>
+
+      <div class="questionContainer">
+        <div class="questionCard1 front">
+          <img src="/static/image/question2.png" alt="물음표" class="image1" />
+          <div class="textSort">
+            <p class="questionCard-text1">카드를 터치해 주세요</p>
+          </div>
+        </div>
+        <div class="questionCard2 front">
+          <img src="/static/image/question2.png" alt="물음표" class="image2" />
+          <div class="textSort">
+            <p class="questionCard-text2">카드를 터치해 주세요</p>
+          </div>
+        </div>
+        <div class="questionCard3 front">
+          <img src="/static/image/question2.png" alt="물음표" class="image3" />
+          <div class="textSort">
+            <p class="questionCard-text3">카드를 터치해 주세요</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./footer.ejs')%>
+
+    <!-- JavaScript Bundle with Popper -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/js/festival.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.body {
+  font-family: "twayair";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* padding-bottom: 160px; */
+  min-height: 100vh;
+}
+
+main {
+  top: 35vh;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.parkImage {
+  border-radius: 2rem;
+  width: 45vw;
+  height: 25vw;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 30vw;
+}
+
+.parkName {
+  font-size: 2vw;
+}
+
+.parkText {
+  font-size: 1vw;
+  margin-bottom: 2rem;
+  height: 13vw;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bi-youtube,
+.bi-link {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.bi-youtube {
+  color: red;
+}
+
+.bi-link {
+  color: black;
+}
+
+@media all and (max-width: 320px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .parkImage {
+    width: 80%;
+  }
+
+  .btn {
+    background-color: rgb(180, 177, 177);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 10vh;
+    line-height: 0vh;
+  }
+  aside {
+    width: 80%;
+  }
+}
+@media all and (min-width: 321px) and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -10vw;
+  }
+
+  .parkText {
+    height: 30vw;
+  }
+
+  .btn {
+    background-color: rgb(180, 177, 177);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 10vh;
+    line-height: 0vh;
+  }
+
+  section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .parkImage {
+    width: 80%;
+  }
+  aside {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+}
+@media all and (min-width: 1025px) {
+}

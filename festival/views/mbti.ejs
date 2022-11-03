@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <meta name="author" content="Dain Kim">
+
+  <meta name="keywords" content="이미지 테스트, 나를 알아보는 10가지 질문, 10-things-test, 3분이미지테스트, 이미지테스트">
+  <meta name="description" content="이미지 테스트: 나를 알아보는 10가지 질문">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="나를 알아보는 10가지 질문">
+  <meta property="og:description" content="사람들이 보는 나는 어떤 이미지일까?">
+  <meta property="og:image" content="./img.수정.png">
+  <meta property="og:url" content="https://dev-dain.github.io/10-things-test/">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" type="text/css" href="img/favicon.png">
+  <link rel="appel-touch-icon-precomposed" href="img/favicon.png">
+  <script src="https://kit.fontawesome.com/cbcad42a26.js" crossorigin="anonymous"></script>
+  <title>
+    재미로 알아보는 mbti 별 추천 여행지
+  </title>
+  <link rel="stylesheet" href="/static/css/mbti_reset.css">
+  <link rel="stylesheet" href="/static/css/mbti_animation.css">
+  <link rel="stylesheet" href="/static/css/mbti_main.css">
+  <link rel="stylesheet" href="/static/css/mbti_welcome.css">
+  <link rel="stylesheet" href="/static/css/mbti_qna.css">
+  <link rel="stylesheet" href="/static/css/mbti_result.css">
+<!-- 
+  <%- include('./navigation.ejs')%> -->
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+      
+    </header>
+
+    <section id="welcome" class="container">
+      <div id="title-box">
+        <h1 class="title">
+          나에게 맞는 <br>
+          여행지 추천!
+        </h1>
+        <br>
+        <span class="time-logo"></span>
+        <div>소요 시간 : 3분 내외</div>
+      </div>
+      <br><br>
+      <div id="name-input">
+        <input type="text" placeholder="이름을 입력해주세요" autofocus>
+      </div>
+      <p class="check-name warning"></p>
+      <div class="start-wrap">
+        <button class="start">START</button>
+      </div>
+    </section>
+    <section id="qna" class="container">
+      <div class="status-bar">
+        <div class="status"></div>
+      </div>
+      <br>
+      <div class="q box"></div>
+      <div class="answer"></div>
+    </section>
+
+    <section id="shareResult" class="result">
+      <h1 class="resultH1">당신의 결과는?!</h1>
+      <div class="resultname">
+      </div>
+      <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+        <img src="/static/mbti_img/1.png" alt="img" class="img-fluid">
+      </div>
+      <div class="resultDesc">
+        <p>호불호가 확실하며 깔끔하게 짜여지는 여행 스타일 선호.
+          2순위 선택지는 다양하게 준비되어야 불안하지 않는 타입.
+          (지금 이거 안맞는다고 할 가능성 큼)
+          
+        </p>
+      </div>
+    </section>  
+
+    
+  </div>
+
+  <script src="/static/js/mbti_data.js"></script>
+  <script src="/static/js/mbti_main.js"></script>
+  
+</body>
+
+
+</html>

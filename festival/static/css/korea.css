@@ -1,0 +1,262 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+* {
+  box-sizing: border-box;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  position: relative;
+  padding-bottom: 160px;
+  min-height: 100vh;
+}
+
+.SEOUL {
+  align-items: center;
+  margin: 0 10%;
+}
+.main {
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.seoul1 {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 20rem;
+  display: absolute;
+}
+.seoul2 {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 300px;
+  display: absolute;
+}
+.seoul1:hover {
+  background-color: rgba(0, 0, 0, 0.507);
+}
+
+.seoul_info {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 10%;
+  color: rgb(3, 3, 3);
+  font-size: 1rem;
+  font-family: "twayair";
+  margin: 0.5rem;
+  line-height: 2rem;
+  word-break: keep-all;
+  display: inline-block;
+}
+
+.kyeongju1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.KYEONGJU {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+}
+.yeosu1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.YEOSU {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.jeonju1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.JEONJU {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.busan1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.BUSAN {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.jeju1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.JEJU {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.daegu1 {
+  position: relative;
+  display: inline-block;
+  margin: 1rem;
+  width: 20rem;
+  height: 15rem;
+}
+
+.DAEGU {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.seoulMatches {
+  display: none;
+}
+
+.kyeongju_info,
+.yeosu,
+.jeonju,
+.busan,
+.jeju,
+.daegu {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media all and (max-width: 320px) {
+  p {
+    display: none;
+  }
+}
+@media all and (min-width: 321px) and (max-width: 768px) {
+  #media-768 {
+    display: block;
+  }
+
+  .seoulMatches {
+    display: block;
+  }
+
+  .seoulMatchesFull {
+    display: none;
+  }
+
+  .SEOUL {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    width: 100%;
+
+    margin: 0;
+  }
+  /* 
+  .seoul_info {
+    flex-direction: column;
+  } */
+
+  /* .reverse {
+    flex-direction: column-reverse;
+  } */
+
+  /* .seoul_info > img {
+    width: 50vw;
+    height: 50vw;
+
+    margin-bottom: 5%;
+  }
+
+  .seoul_info > p {
+    font-size: 3vw;
+    border-radius: 5%;
+
+    border: 1px solid black; 
+
+    margin-bottom: 15%;
+  } */
+
+  .KYEONGJU,
+  .YEOSU,
+  .JEONJU,
+  .BUSAN,
+  .JEJU,
+  .DAEGU {
+    gap: 10px;
+    margin-right: 10px;
+  }
+
+  .kyeongju1,
+  .yeosu1,
+  .jeonju1,
+  .busan1,
+  .jeju1,
+  .daegu1 {
+    width: 100%;
+    height: 25vw;
+
+    margin: 30px 0 0 0;
+  }
+
+  .kyeongju_info > p,
+  .yeosu,
+  .jeonju,
+  .busan,
+  .jeju,
+  .daegu,
+  .seoul_info {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #media-1024 {
+    display: block;
+  }
+}
+@media all and (min-width: 1025px) {
+  #media-1025 {
+    display: block;
+  }
+}

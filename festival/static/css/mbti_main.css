@@ -1,0 +1,135 @@
+/* style */
+@font-face {
+  font-family: 'twayair';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#94c5ef+0,3690f0+51,256fdd+100 */
+background: rgb(148,197,239); /* Old browsers */
+background: -moz-linear-gradient(left,  rgb(148,197,239) 0%, rgb(54,144,240) 51%, rgb(209, 227, 255) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgb(148,197,239) 0%,rgb(54,144,240) 51%,rgb(210, 228, 255) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgb(148,197,239) 0%,rgb(54,144,240) 51%,rgb(184, 169, 248) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94c5ef', endColorstr='#256fdd',GradientType=0 ); /* IE6-9 */
+
+}
+#wrap {
+  position: relative;
+  overflow: hidden;
+  /* margin-top: 50px; */
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  line-height: 2rem;
+}
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px 0 25px 0;
+  width: 100%;
+  min-width: 100%;
+}
+
+@media all and (min-width: 768px) {
+  /* qna에서 margin-top을 없애야 함 */
+  #wrap {
+    margin-top: 10px;
+  }
+  .container {
+    padding: 60px 5% 37.5px 5%;
+    width: 80%;
+    min-width: 80%;
+    border-radius: 20px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  /* qna에서 margin-top을 없애야 함 */
+  #wrap {
+    margin-top: 15px;
+  }
+  .container {
+    padding: 100px 5% 40px 5%;
+    width: 70%;
+    min-width: 70%;
+    border-radius: 30px;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .container {
+    padding: 100px 3.5% 50px 3.5%;
+    width: 55%;
+    min-width: 55%;
+  }
+}
+
+/* animation */
+@-webkit-keyframes start-flicker {
+  0% {background-color: rgba(0, 135, 245, 0.9);}
+  50% {background-color: rgba(0, 135, 245, 0.6);}
+  100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@keyframes start-flicker {
+  0% {background-color: rgba(0, 135, 245, 0.9);}
+  50% {background-color: rgba(0, 135, 245, 0.6);}
+  100% {background-color: rgba(0, 135, 245, 0.9);}
+}
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@-webkit-keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@-webkit-keyframes going-up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}
+}
+@keyframes going-up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}
+}
+@-webkit-keyframes going-down {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(10px);}
+}
+@keyframes going-down {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(10px);}
+}
+@-webkit-keyframes going-left {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-10px);}
+}
+@keyframes going-left {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-10px);}
+}
+@-webkit-keyframes working {
+  0% {width: 0%;}
+  50% {width: 40%;}
+  100% {width: 100%;}
+}
+@keyframes working {
+  0% {width: 0%;}
+  50% {width: 40%;}
+  100% {width: 100%;}
+}
+
+/* animation class */
+.fade-out-5-4 {
+  animation: fade-out 0.5s 0.4s;
+}
+

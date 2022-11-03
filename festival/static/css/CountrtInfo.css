@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .first_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: absolute;
+    top: 200px;
+    left: 120px;
+  }
+
+  .country_short {
+    font-size: 20px;
+  }
+
+  .country_name {
+    font-size: 70px;
+  }
+
+  .danger {
+    padding: 200px 0 300px 0;
+  }
+
+  .spot {
+    text-align: center;
+    font-size: 60px;
+    margin: 50px 0 150px 0;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 300px;
+  }
+
+  .card-img-top {
+    height: 400px;
+  }
+
+  .card-text {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .city_card {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 150px;
+    left: 150px;
+
+    width: 80%;
+
+    border: 1px solid;
+  }
+
+  .city_card_2 {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 150px;
+    left: 150px;
+
+    width: 80%;
+
+    border: 1px solid;
+  }
+
+  .card_description {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+  }
+
+  .description {
+    padding: 0 30px 0 30px;
+  }
+
+  .button {
+    position: fixed;
+
+    top: 160px;
+    right: 150px;
+
+    color: white;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .first_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .country_short {
+    font-size: 4px;
+  }
+
+  .country_name {
+    font-size: 20px;
+  }
+
+  .danger {
+    padding: 50px 0 50px 0;
+  }
+
+  .danger {
+    font-size: 4px;
+  }
+
+  .spot {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 50px 0;
+  }
+
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .card-text {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .city_card {
+    left: 30px;
+  }
+
+  .city_card {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 150px;
+    left: 30px;
+
+    width: 80%;
+
+    border: 1px solid;
+  }
+
+  .city_card_2 {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 150px;
+    left: 30px;
+
+    width: 80%;
+
+    border: 1px solid;
+  }
+
+  .card_description {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+  }
+
+  .description {
+    padding: 0 10px 0 10px;
+
+    font-size: 2px;
+
+    height: 100px;
+    overflow: auto;
+  }
+
+  body {
+    overflow: auto;
+    height: 1500px;
+
+    position: relative;
+    padding-bottom: 160px ;
+    min-height: 100vh;
+  }
+
+  .button {
+    position: fixed;
+
+    top: 160px;
+    right: 150px;
+
+    top: 115px;
+    left: 330px;
+
+    color: white;
+    font-weight: bold;
+  }
+
+  .disappear {
+    display: none;
+  }
+
+  .logo_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.font_style {
+  font-family: "twayair";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+  text-decoration-line: none;
+}
+
+.swiss {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+}
+
+.logo_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  width: 400px;
+  display: block;
+}
+
+/* .first_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  position: absolute;
+  top: 200px;
+  left: 120px;
+} */
+
+.danger_description {
+  display: flex;
+  flex-direction: column;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url("img/Flag.jpg"); */
+}
+
+/* .card {
+  width: 600px;
+} */
+
+.card_1 {
+  width: 40%;
+  opacity: 60%;
+}
+
+.card_2 {
+  width: 40%;
+  opacity: 60%;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
+.city_description_img {
+  width: 40%;
+  height: 100%;
+}
+
+.hidden {
+  /* visibility: hidden; */
+  display: none;
+}
+
+.letter {
+  color: white;
+}
+
+.card:hover {
+  opacity: 100%;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
