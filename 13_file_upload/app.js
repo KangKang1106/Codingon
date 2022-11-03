@@ -59,7 +59,8 @@ app.get('/practice31', function (req, res) {
 app.post('/signIn', uploadDetail.single('profile'), function(req, res) {
   console.log(req.file);
   console.log(req.body);
-  res.render('result', {userInfo: req.body,
+  res.render('result', {
+    userInfo: req.body,
     profile: req.file.path,
   });
 });
