@@ -158,3 +158,151 @@ UPDATE user SET address = '제주특별자치도 제주시', name = '이지현' 
 DELETE FROM user WHERE id = 11;
 DELETE FROM user WHERE id > 8;
 
+
+-- 실습 34. CREATE문
+CREATE TABLE user1 (
+  id VARCHAR(10) NOT NULL PRIMARY KEY,
+  pw VARCHAR(20) NOT NULL,
+  name VARCHAR(5) NOT NULL,
+  gender ENUM('F', 'M', '') DEFAULT '',
+  birthday DATE NOT NULL,
+  age INT(3) NOT NULL DEFAULT '0'
+);
+
+-- 실습 35. INSERT문
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('hong1234', '8o4bkg', '홍길동', 'M', '1990-01-31', 33);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('sexysung', '87awjkdf', '성춘향', 'F', '1993-03-31', 31);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('power70', 'qxur8sda', '변사또', 'M', '1970-05-02', 53);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('hanjo', 'jk48fn4', '한조', 'M', '1984-10-18', 39);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('widowmaker', '38ewifh3', '위도우', 'F', '1976-06-27', 47);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('dvadva', 'k3f3ah', '송하나', 'F', '2001-06-03', 22);
+INSERT INTO user1(id, pw, name, gender, birthday, age) VALUES('jungkrat', '4ifha7f', '정크랫', 'M', '1999-11-11', 24);
+
+-- 실습 36. SELECT문
+-- 1
+SELECT * FROM user1 ORDER BY birthday ASC;
+
+-- 2
+SELECT * FROM user1 WHERE gender = 'M' ORDER BY name DESC;
+
+-- 3
+SELECT id, name FROM user1 WHERE birthday LIKE '%1990%';
+
+-- 4
+SELECT * FROM user1 WHERE birthday LIKE '____-06-__' ORDER BY birthday DESC;
+
+-- 5
+SELECT * FROM user1 WHERE gender = 'M' AND birthday LIKE '%1970%';
+
+-- 6
+SELECT * FROM user1 ORDER by age ASC LIMIT 3;
+
+-- 7
+SELECT * FROM user1 WHERE age BETWEEN 25 AND 50;
+
+-- 8
+UPDATE user1 SET pw = '12345678' WHERE id = 'hong1234';
+
+-- 9
+DELETE FROM user1 WHERE id = 'jungkrat';
+
+
+-- DCL
+-- Data Control Language : 데이터 제어어
+-- 데이터베이스에 접근해 읽거나 쓰는 것을 제한할 수 있는 권한 부여/박탈
+
+-- GRANT : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 권한 부여
+-- REVOKE : 특정 데이터베이스 사용자에게 특정 작업에 대한 수행 권한 박탈
+
+-- # database 심화
+SHOW DATABASES;
+USE kdt;
+SHOW TABLES;
+
+
+-- [PK, FK 연결하기]
+-- 1. 기본 키 제약조건
+-- 고객 테이블에 기본키를 설정함
+
+-- 고객 (customer) 테이블 생성
+CREATE TABLE customer (
+  id VARCHAR(10) NOT NULL PRIMARY KEY,
+  name VARCHAR(10) NOT NULL,
+  birthday DATE NOT NULL
+);
+
+-- 고객 (customer) 데이터 추가
+INSERT INTO customer (id, name, birthday) VALUES ('aaa', '김이현', '1990-03-17');
+INSERT INTO customer (id, name, birthday) VALUES ('bbb', '최지율', '1992-11-01');
+INSERT INTO customer (id, name, birthday) VALUES ('ccc', '이혜진', '1993-05-31');
+
+-- 고객 (customer) 데이터 조회
+SELECT * FROM customer;
+
+
+-- 2. 외래키 제약조건
+-- 두 테이블 사이의 관계를 만들어줌
+-- 다른 테이블의 기본키(PK)를 현재 테이블의 외래키(FK)로 연결함
+-- 기준 테이블 : 기본키 갖는 테이블
+-- 참조 테이블 : 외래키가 있는 테이블
+-- 형식 : FOREIGN KEY(열_이름) REFERENCES 기준_테이블(열_이름)
+
+-- ON UPDATE CASCADE : 기준 테이블의 데이터가 변경되면 참조 테이블의 데이터도 변경됨
+-- ON DELETE CASCADE : 기준 테이블의 데이터가 삭제되면 참조 테이블의 데이터도 삭제됨
+
+-- 주문목록 (orderlist) 테이블 생성
+CREATE TABLE orderlist (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  customer_id VARCHAR(10) NOT NULL,
+  product_name VARCHAR(20) NOT NULL,
+  quantity INT,
+  FOREIGN KEY(customer_id) REFERENCES customer(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+-- 주문목록 (orderlist) 데이터 추가
+INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('aaa','맥북m1', 1);
+INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('bbb', '빅파이', 31);
+INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('ccc', '키보드', 3);
+INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('bbb', '초코파이', 5);
+INSERT INTO orderlist (customer_id, product_name, quantity) VALUES ('ccc', '귀여운텀블러', 1);
+
+-- 주문목록 (orderlist) 데이터 조회
+SELECT * FROM orderlist;
+
+
+-- [JOIN]
+-- 두 테이블을 묶어서 하나의 테이블을 만듦
+-- 두 테이블을 엮어서 원하는 형태를 보고 싶을 때 사용
+-- ex
+-- customer(id, name, birthday) / orderlist(id, customer_id, product_name, quantity)
+-- 하나의 큰 테이블(customer_id, product_name, quantity, name, birthday)
+
+-- 일대다 관계 (one to many)
+-- (1) A 테이블에는 하나의 값만 존재
+-- (2) B 테이블에는 여러 개의 값이 존재
+-- ex. 한 회원(A)은 여러 개의 주문(B) 정보를 가질 수 있을
+-- 즉, 회원은 한 명(one) 이지만 구매를 여러 번 (many) 가능
+
+-- SELECT 열_목록
+-- FROM tableA
+-- INNER JOIN tableB
+-- ON 조인_조건
+-- [WHERE 검색_조건]
+
+SELECT * FROM customer;
+SELECT * FROM orderlist;
+
+-- 유저 아이디를 기준으로 customer와 orderlist 조인 (모든 컬럼의 모든 행 보기)
+SELECT * FROM customer INNER JOIN orderlist ON customer.id = orderlist.customer_id;
+
+-- 유저 아이디를 기준으로 customer와 orderlist 조인 (모든 컬럼에 대해 where절 만족하는 행만 보기)
+SELECT * FROM customer INNER JOIN orderlist ON customer.id = orderlist.customer_id WHERE quantity >= 5;
+
+-- 유저 아이디를 기준으로 customer와 orderlist 조인 (일부 컬럼에 대해 모든 행 보기)
+SELECT customer.id, customer.name, orderlist.product_name, orderlist.quantity FROM customer INNER JOIN orderlist ON customer.id = orderlist.customer_id;
+
+-- 유저 아이디를 기준으로 customer와 orderlist 조인 (일부 컬럼 이름에 별명을 붙여 모든 행 보기)
+SELECT orderlist.id as order_id, customer.id as user_id, orderlist.product_name, orderlist.quantity FROM customer INNER JOIN orderlist ON customer.id = orderlist.customer_id;
+
+-- 유저 아이디를 기준으로 customer와 orderlist 조인 (일부 컬럼 이름에 별명을 붙여 조건을 만족하는 행 보기)
+SELECT orderlist.id as order_id, customer.id as user_id, orderlist.product_name, orderlist.quantity FROM customer INNER JOIN orderlist ON customer.id = orderlist.customer_id WHERE orderlist.id = 3;
