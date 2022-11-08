@@ -35,6 +35,6 @@ exports.deleteVisitor = (req, res) => {
 
   Visitor.deleteVisitor(req.body.id, (result) => {
     console.log('Cvisitor.js', result);
-    res.send('삭제 성공');
+    res.send('정말 삭제하시겠습니까?');
   });
 };
