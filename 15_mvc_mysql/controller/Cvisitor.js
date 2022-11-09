@@ -29,6 +29,25 @@ exports.postVisitor = (req, res) => {
   });
 };
 
+exports.patchVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.patchVisitor(req.body, (result) => {
+    console.log('Cvisitor.js', result);
+    res.send('수정 성공');
+  });
+};
+
+exports.getVisitor = (req, res) => {
+  console.log(req.query); // {id: '1'}
+  console.log(req.query.id); // '1'
+
+  Visitor.getVisitor(req.query.id, (result) => {
+    console.log('Cvisitor.js', result);
+    res.send(result);
+  });
+};
+
 exports.deleteVisitor = (req, res) => {
   console.log(req.body);
   console.log(req.body.id);
