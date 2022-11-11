@@ -1,27 +1,27 @@
-const mysql = require('mysql');
+const mysql = require("mysql");
 
 // DB 연결 정보
 const conn = mysql.createConnection({
-  host: 'localhost',
-  user: 'user',
-  password: 'kang8798',
-  database: 'kdt',
+  host: "localhost",
+  user: "user",
+  password: "kang8798",
+  database: "kdt",
 });
 
 exports.getVisitors = (callback) => {
   // before
   // return [
-    // {id: 1, name: '홍길동', comment: '으라차차},
+  // {id: 1, name: '홍길동', comment: '으라차차},
   // ]
 
   // after - mysql 연결
   // query(SQL, callback)
-  conn.query('SELECT * FROM visitor', (err, rows) => {
+  conn.query("SELECT * FROM visitor", (err, rows) => {
     if (err) {
       throw err;
     }
 
-    console.log('Visitors', rows);
+    console.log("Visitors", rows);
     callback(rows);
   });
 };
@@ -35,7 +35,7 @@ exports.postVisitor = (data, callback) => {
         throw err;
       }
 
-      console.log('Visitor.js', rows);
+      console.log("Visitor.js", rows);
       callback(rows.insertId);
     }
   );
@@ -47,34 +47,34 @@ exports.getVisitor = (id, callback) => {
       throw err;
     }
 
-    console.log('Visitor.js', rows);
+    console.log("Visitor.js", rows);
     callback(rows[0]);
   });
 };
 
 exports.patchVisitor = (data, callback) => {
-  conn.query(`UPDATE visitor SET name = '${data.name}', comment = '${data.comment}' WHERE id = ${data.id}`, (err, rows) => {
-    if (err) {
-      throw err;
-    }
-
-    console.log('Visitor.js', rows);
-    callback(true); // true: 수정 성공을 의미
-  });
-};
-
-exports.deleteVisitor = (id, callback) => {
-  // id : 사용자가 삭제 버튼을 클릭한 행의 id 값
-  console.log('id: ', id);
   conn.query(
-    `DELETE FROM visitor WHERE id = ${id}`,
+    `UPDATE visitor SET name = '${data.name}', comment = '${data.comment}' WHERE id = ${data.id}`,
     (err, rows) => {
       if (err) {
         throw err;
       }
 
-      console.log('Visitor.js', rows);
-      callback(true); // true : 삭제 성공을 의미
+      console.log("Visitor.js", rows);
+      callback(true); // true: 수정 성공을 의미
     }
   );
+};
+
+exports.deleteVisitor = (id, callback) => {
+  // id : 사용자가 삭제 버튼을 클릭한 행의 id 값
+  console.log("id: ", id);
+  conn.query(`DELETE FROM visitor WHERE id = ${id}`, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js", rows);
+    callback(true); // true : 삭제 성공을 의미
+  });
 };
