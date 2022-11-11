@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
 
-    <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
@@ -20,7 +19,7 @@
       <input id="password" type="password" name="pw" required /><br />
       <label for="nickname">Name </label>
       <input id="nickname" type="text" name="name" required /><br />
-      <button type="button" id = "register" onclick="register();">Register</button>
+      <button type="button" id="register" onclick="register(); disabled">Register</button>
     </form>
 
     <a href="/user/signin">Login</a>
@@ -28,17 +27,19 @@
     <script>
       function search() {
         const form = document.forms['form_register'];
-        const register= document.querySelector('#register');
+        const register = document.querySelector('#register');
 
         axios({
           method: 'POST',
-          url: '/user/signup',
+          url: '/user/search',
           data: {
             userid: form.userid.value,
           },
-        }).then((res) => {
+        })
+        .then((res) => {
           return res.data;
-        }).then((data) => {
+        })
+        .then((data) => {
           if (data) {
             alert('아이디가 중복되어 다른 아이디를 사용 부탁드립니다.');
             register.disabled = true;

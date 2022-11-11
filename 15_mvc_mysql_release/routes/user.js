@@ -7,6 +7,7 @@ router.get('/', controller.main);
 router.get('/signup', controller.signup);
 router.get('/signin', controller.signin);
 
+router.post('/search', controller.searchSignup);
 router.post('/signup', controller.postSignup);
 
 router.post('/signin', controller.postSignin);
@@ -14,7 +15,5 @@ router.post('/signin', controller.postSignin);
 router.post('/profile', controller.postProfile);
 router.post('/profile/edit', controller.editProfile);
 router.post('/profile/delete', controller.deleteProfile);
-
-router.post('/signup', controller.searchSignup);
 
 module.exports = router;

@@ -58,8 +58,8 @@ exports.deleteProfile = (req, res) => {
 };
 
 exports.searchSignup = (req, res) => {
-  User.searchSignup(req.body, (result) => {
-    if (result === undefined) {
+  User.searchSignup(req.body.userid, (result) => {
+    if (result == undefined) {
       res.send(false);
     } else {
       res.send(true);
