@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 41. Session 연습</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>실습 41. Session 연습</h1>
+
+    <!-- <a href="/login" id="signin">로그인</a> -->
+
+    <% if (isLogin) { %>
+    <!-- isLogin === true; 로그아웃 a 태그 -->
+    <p><%= user %> 님 환영합니다</p>
+    <a href="/logout">로그아웃</a>
+    <% } else { %>
+    <!-- isLogin === false; 로그인 a 태그 -->
+    <a href="/login">로그인</a>
+    <% } %>
+  </body>
+</html>
