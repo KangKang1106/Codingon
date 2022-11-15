@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>채팅 프로그램</title>
+
+    <script
+      src="https://cdn.socket.io/4.5.3/socket.io.min.js"
+      integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .chat-list {
+        background-color: skyblue;
+        width: 300px;
+        height: 400px;
+        overflow: auto;
+      }
+
+      .my-chat {
+        text-align: right;
+      }
+
+      .my-chat div {
+        background-color: rgb(219, 200, 78);
+        display: inline-block;
+        border-radius: 8px;
+        margin: 5px 10px 5px 0px;
+        padding: 3px 1px;
+        max-width: 80%;
+      }
+
+      .other-chat div {
+        background-color: white;
+        display: inline-block;
+        border-radius: 8px;
+        margin: 5px 0px 5px 10px;
+        padding: 3px 1px;
+      }
+
+      .notice {
+        text-align: center;
+        color: navy;
+        font-size: 12px;
+        /* position: relative;
+        top: -90%; */
+      }
+
+      .d-none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>socket.io</h1>
+
+    <!-- <button onclick="sayHello();">Hello</button>
+    <button onclick="sayStudy();">Study</button>
+    <button onclick="sayBye();">Bye</button>
+    <p id="from-server"></p> -->
+
+    <!-- [실습 44-2] 채팅창 입장 문구 안내 -->
+    <div class="entry-box">
+      <input type="text" id="nickname" placeholder="닉네임" autofocus />
+      <button type="button" onclick="entry();">입장</button>
+    </div>
+    <!-- [실습 43] 채팅창 UI 만들기 -->
+    <div class="chat-box d-none">
+      <div id="chat-list" class="chat-list">
+        <!-- [실습 43] 임시 데이터
+        <div class="my-chat">
+          <div>my</div>
+        </div>
+        <div class="other-chat">
+          <div>other</div>
+        </div>
+        <div class="notice">..가 입장하였습니다</div> -->
+      </div>
+      <input type="text" id="message" />
+      <button type="button" onclick="send();" id="send">전송</button>
+    </div>
+
+    <script>
+      let socket = io.connect(); // socket 사용을 위한 객체 생성
+      let myNick; // 내 닉네임 설정
+
+      socket.on("connect", () => {
+        console.log("**** ⭕ Client Socket Connected >> ", socket.id);
+      });
+
+      // [실습 44] 채팅창 입장 안내 문구
+      socket.on("notice", (msg) => {
+        console.log("socket on notice >> ", msg);
+
+        document
+          .querySelector("#chat-list")
+          .insertAdjacentHTML("beforeend", `<div class="notice">${msg}</div>`);
+      });
+
+      // [실습 44-2] 채팅창 입장 안내 문구 socket.id -> nickname
+      function entry() {
+        // console.log(document.querySelector("#nickname").value);
+        socket.emit("setNick", document.querySelector("#nickname").value);
+      }
+
+      socket.on("entrySuccess", (nick) => {
+        myNick = nick;
+
+        // 입력창 비활성화
+        document.querySelector("#nickname").disabled = true;
+        // 버튼 비활성화
+        document.querySelector(".entry-box > button").disabled = true;
+        // 채팅 박스를 보여줌
+        document.querySelector(".chat-box").classList.remove("d-none");
+      });
+
+      // 'error' 이벤트 받기
+      socket.on("error", (data) => {
+        alert(data);
+      });
+
+      // [실습 45] 채팅창 메세지 전송 Step1
+      // send 이벤트 전송하기
+      document
+        .getElementById("message")
+        .addEventListener("keydown", function (event) {
+          if (event.keyCode == 13) {
+            const data = {
+              myNick: myNick,
+              msg: document.querySelector("#message").value,
+            };
+            socket.emit("send", data);
+            document.querySelector("#message").value = "";
+          }
+        });
+      function send() {
+        const data = {
+          myNick: myNick,
+          msg: document.querySelector("#message").value,
+        };
+        socket.emit("send", data);
+        document.querySelector("#message").value = "";
+      }
+
+      // [실습 45] 채팅창 메세지 전송 Step
+      // newMessage 이벤트를 전달받기 {닉네임, 메세지 내용}
+      socket.on("newMessage", (data) => {
+        console.log("socket on newMessage >> ", data);
+
+        // 생성해야할 채팅 html 구조
+        let chatList = document.querySelector("#chat-list");
+        let div = document.createElement("div");
+        let divChat = document.createElement("div");
+        let long = document.querySelector("#message").value;
+
+        if (myNick === data.nick) {
+          div.classList.add("my-chat");
+        } else {
+          div.classList.add("other-chat");
+        }
+
+        divChat.textContent = `${data.nick} : ${data.msg}`;
+        div.append(divChat);
+        chatList.append(div);
+        chatList.scrollTop = chatList.scrollHeight;
+      });
+    </script>
+    <!-- <script src="../static/js/42.js"></script> -->
+  </body>
+</html>
