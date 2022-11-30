@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.hello {
+  cursor: pointer;
+}
+
+.test {
+  background-color: #faebd7;
+  color: #b36d12;
+  font-size: 50px;
+  width: 500px;
+  margin: auto;
+}
+
+.input {
+  margin-top: 30px;
+}
+
+.rainbow {
+  display: flex;
+  justify-content: center;
+}
+
+.red {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
+
+.orange {
+  background-color: orange;
+  width: 50px;
+  height: 100px;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 50px;
+  height: 150px;
+}
+
+.green {
+  background-color: green;
+  width: 50px;
+  height: 200px;
+}
+
+.blue {
+  background-color: blue;
+  width: 50px;
+  height: 250px;
+}
+
+.navy {
+  background-color: navy;
+  width: 50px;
+  height: 300px;
+}
+
+.purple {
+  background-color: purple;
+  width: 50px;
+  height: 350px;
+}
+
+#circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.whiteeye {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 2;
+  top: 100px;
+  left: 90px;
+}
+
+.blackeye {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 3;
+  top: 110px;
+  left: 90px;
+}
+
+.grass {
+  position: fixed;
+  z-index: 5;
+  top: 250px;
+  left: 0px;
+}
+
+.ball1 {
+  background-color: red;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
+  left: 70px;
+}
+.ball2 {
+  background-color: orange;
+  position: fixed;
+  z-index: 2;
+  top: 135px;
+  left: 125px;
+}
+.ball3 {
+  background-color: yellow;
+  position: fixed;
+  z-index: 3;
+  top: 180px;
+  left: 170px;
+}
+.ball4 {
+  background-color: green;
+  position: fixed;
+  z-index: 4;
+  top: 230px;
+  left: 190px;
+}
+.ball5 {
+  background-color: blue;
+  position: fixed;
+  z-index: 6;
+  top: 270px;
+  left: 250px;
+}
