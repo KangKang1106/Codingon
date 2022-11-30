@@ -17,3 +17,107 @@ let x = 1,
 [x, y] = [y, x];
 console.log("x: ", x);
 console.log("y: ", y);
+
+// 2. 객체 구조 분해
+// - 키 값과 변수명 일치해야 함
+// - 없는 키 값을 변수로 받으면 undefined
+const obj = {
+  key1: "one",
+  key2: "two",
+};
+const { key1, newKey1, key2, key3 = "three" } = obj;
+console.log(key1);
+console.log(newKey1);
+console.log(key2);
+console.log(key3);
+
+const { a, b } = { a: 10, b: 20 };
+console.log(a);
+console.log(b);
+
+//////////////////////////////////////
+const arr = ["a", "b", "c"];
+
+// [Before]
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);
+
+// [After]
+const [one, two, three] = arr;
+console.log(one);
+console.log(two);
+console.log(three);
+
+// [After2]
+const [one2, two2, three2, four2 = "hello"] = arr;
+console.log(one2);
+console.log(two2);
+console.log(three2);
+console.log(four2);
+
+////////////////////////////////////
+const tv = {
+  name: "samsung tv",
+  price: 300,
+  size: "76인치",
+  store: "samsung",
+};
+
+// [Before]
+// ver1. 점 연산자
+console.log(tv.name);
+console.log(tv.price);
+console.log(tv.size);
+console.log(tv.store);
+// ver2. 대괄호 표기법
+console.log(tv["name"]);
+console.log(tv["price"]);
+console.log(tv["size"]);
+console.log(tv["store"]);
+
+// [After]
+// key : 변수명 -> 새로운 변수명을 key로 사용
+// key = 'value' -> 새로운 key에 대한 값을 설정
+let { price: pricePrice, size, store, name, owner = "Kang" } = tv;
+console.log(name);
+console.log(pricePrice);
+console.log(size);
+console.log(store);
+console.log(owner);
+// console.log(price);
+
+/////////////////////////////////////////
+// spread 연산자 : 값을 펼치는 연산자
+
+// object
+const defaultInfo = {
+  price: 2000,
+  store: "ceo",
+};
+
+const chocoIcecream = {
+  ...defaultInfo,
+  flavor: "choco",
+};
+
+const strawberryIcecream = {
+  ...defaultInfo,
+  flavor: "strawberry",
+};
+
+const mangoIcecream = {
+  ...defaultInfo,
+  flavor: "mango",
+};
+
+console.log(chocoIcecream);
+console.log(strawberryIcecream);
+console.log(mangoIcecream);
+
+// array
+const nums1 = ["one", "two", "three"];
+const nums2 = ["four", "five", "six"];
+
+const nums = [...nums1, "seven", ...nums2];
+console.log(nums);
