@@ -1,3 +1,33 @@
 .App {
   text-align: center;
 }
+
+.red {
+  color: red;
+}
+
+.bg {
+  background-color: antiquewhite;
+  width: 600px;
+  margin: auto;
+}
+
+.title {
+  color: orange;
+  font-weight: bold;
+}
+
+.dog {
+  width: 150px;
+  height: 200px;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.imfor {
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 10px;
+}
