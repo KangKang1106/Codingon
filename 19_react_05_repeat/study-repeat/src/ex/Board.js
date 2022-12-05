@@ -1,49 +1,98 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Board = () => {
   const [results, setResults] = useState([]);
 
-  const [userId, setUserId] = useState(1);
   const [writer, setWriter] = useState("");
   const [title, setTitle] = useState("");
 
-  const addresult = (e) => {
-    const newresult = results.concat({
-      userId: userId,
+  const writerRef = useRef();
+  const titleRef = useRef();
+
+  const addresult = () => {
+    const newResult = {
       writer: writer,
       title: title,
-    });
+    };
 
-    setUserId(userId + 1);
-    setResults(newresult);
+    // ...results: 기존 state 배열의 모든 원소
+    // newresult : 새로 추가될 state 배열의 원소
+    // [...results, newResult] : 변경된 state 배열
+    setResults([...results, newResult]);
+    // setResults(newresult);
+
     setWriter("");
     setTitle("");
+  };
+
+  const writerFocus = () => {
+    writerRef.current.focus();
+  };
+
+  const titleFocus = () => {
+    titleRef.current.focus();
+  };
+
+  const clickBtn = () => {
+    if (writer === "") {
+      writerRef.current.focus();
+    } else if (title === "") {
+      titleRef.current.focus();
+    } else {
+      const newResult = {
+        writer: writer,
+        title: title,
+      };
+
+      setResults([...results, newResult]);
+      setWriter("");
+      setTitle("");
+    }
   };
 
   return (
     <div>
       <h1>실습 52</h1>
-
-      <fieldset>
-        작성자 :
-        <input
-          type="text"
-          value={writer}
-          onChange={(e) => setWriter(e.target.value)}
-          placeholder="작성자"
-        />
-        제목 :
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <button onClick={addresult}>작성</button>
-      </fieldset>
+      <form>
+        <fieldset>
+          작성자 :
+          <input
+            type="text"
+            id="writer"
+            value={writer}
+            ref={writerRef}
+            onChange={(e) => setWriter(e.target.value)}
+            placeholder="작성자"
+          />
+          제목 :
+          <input
+            type="text"
+            id="title"
+            value={title}
+            ref={titleRef}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <button
+            type="button"
+            // onClick={
+            //   (writer === "" && writerFocus) ||
+            //   (title === "" ? titleFocus : addresult)
+            // }
+            onClick={clickBtn}
+          >
+            작성
+          </button>
+        </fieldset>
+      </form>
       <br />
       <br />
 
-      <table border="1" cellSpacing="0" cellPadding="0">
+      <table
+        border="1"
+        cellSpacing="0"
+        cellPadding="0"
+        style={{ margin: "30px auto", width: "500px" }}
+      >
         <thead>
           <tr>
             <td>번호</td>
@@ -52,10 +101,10 @@ const Board = () => {
           </tr>
         </thead>
         <tbody>
-          {results.map((a) => {
+          {results.map((a, idx) => {
             return (
-              <tr key={a.userId}>
-                <td>{a.userId}</td>
+              <tr key={idx + 1}>
+                <td>{idx + 1}</td>
                 <td>{a.writer}</td>
                 <td>{a.title}</td>
               </tr>
