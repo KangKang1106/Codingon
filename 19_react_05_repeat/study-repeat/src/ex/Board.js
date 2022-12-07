@@ -11,6 +11,7 @@ const Board = () => {
   const titleRef = useRef();
 
   const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState("");
 
   const searchRef = useRef();
 
@@ -55,21 +56,35 @@ const Board = () => {
     }
   };
 
+  const handleSelect = (e) => {
+    setSelected(e.target.value);
+  };
+
   const searchBtn = () => {
     if (search === "") {
       searchRef.current.focus();
+    } else {
+      const searchResult = results.filter((x) => {
+        if (selected === "작성자") {
+          if (x.writer.includes(search) === true) {
+            const newResult2 = {
+              writer: x.writer,
+              title: x.title,
+            };
+            return newResult2;
+          }
+        } else {
+          if (x.title.includes(search) === true) {
+            const newResult2 = {
+              writer: x.writer,
+              title: x.title,
+            };
+            return newResult2;
+          }
+        }
+      });
+      setResults2(searchResult);
     }
-    const searchResult = results.filter((x) => {
-      if (x.writer.includes(search) === true) {
-        const newResult2 = {
-          writer: x.writer,
-          title: x.title,
-        };
-        // console.log(newResult2);
-      }
-    });
-    setResults2(searchResult);
-    console.log(results2);
   };
 
   return (
@@ -105,7 +120,7 @@ const Board = () => {
             작성
           </button>
           <br />
-          <select>
+          <select onChange={handleSelect} value={selected}>
             <option value="작성자">작성자</option>
             <option value="제목">제목</option>
           </select>
@@ -150,32 +165,35 @@ const Board = () => {
         </tbody>
       </table>
       <h2>댓글 검색 결과</h2>
-      <h3>검색 결과가 없습니다.</h3>
-      {results2.map((b, idx) => {
-        return (
-          <table
-            border="1"
-            cellSpacing="0"
-            cellPadding="0"
-            style={{ margin: "30px auto", width: "500px" }}
-          >
-            <thead>
-              <tr>
-                <td>번호</td>
-                <td>작성자</td>
-                <td>제목</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr key={idx}>
-                <td>{idx + 1}</td>
-                <td>{b.writer}</td>
-                <td>{b.title}</td>
-              </tr>
-            </tbody>
-          </table>
-        );
-      })}
+      {results2.length === 0 ? (
+        <h3>검색 결과가 없습니다.</h3>
+      ) : (
+        <table
+          border="1"
+          cellSpacing="0"
+          cellPadding="0"
+          style={{ margin: "30px auto", width: "500px" }}
+        >
+          <thead>
+            <tr>
+              <td>번호</td>
+              <td>작성자</td>
+              <td>제목</td>
+            </tr>
+          </thead>
+          <tbody>
+            {results2.map((b, idx) => {
+              return (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{b.writer}</td>
+                  <td>{b.title}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
