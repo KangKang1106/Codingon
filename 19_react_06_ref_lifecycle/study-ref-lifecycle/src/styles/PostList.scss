@@ -1,0 +1,17 @@
+@import "./utils.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.PostList {
+  header {
+    height: $height-header;
+    background-color: $color-blue;
+    color: $color-white;
+    text-shadow: 2px 2px 4px $shadow-black;
+    line-height: $height-header;
+    font-size: 28px;
+    font-weight: 700;
+  }
+}

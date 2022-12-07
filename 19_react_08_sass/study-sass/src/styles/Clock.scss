@@ -1,0 +1,46 @@
+@import "./utils.scss";
+
+.Clock {
+  .clock {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .first {
+      border-radius: 50%;
+      background-color: $color-pink;
+      width: $smallbox-size;
+      height: $smallbox-size;
+    }
+    .second {
+      border-radius: 50%;
+      background-color: $color-yellow;
+      width: $smallbox-size;
+      height: $smallbox-size;
+    }
+    .third {
+      border-radius: 50%;
+      background-color: $color-green;
+      width: $smallbox-size;
+      height: $smallbox-size;
+    }
+  }
+
+  &:hover {
+    .first {
+      @include cycle(-10px, -10px, -10px);
+      animation-iteration-count: infinite;
+    }
+    .second {
+      @include cycle(-20px, -20px, 20px);
+      animation-iteration-count: infinite;
+    }
+    .third {
+      @include cycle(-30px, -30px, 30px);
+      animation-iteration-count: infinite;
+    }
+  }
+}

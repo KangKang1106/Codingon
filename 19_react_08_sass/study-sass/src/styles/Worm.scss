@@ -1,0 +1,72 @@
+.Worm {
+  height: 500px;
+  #circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .whiteeye {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 460px;
+    left: 90px;
+  }
+
+  .blackeye {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    top: 465px;
+    left: 90px;
+  }
+
+  .grass {
+    position: absolute;
+    z-index: 5;
+    top: 550px;
+    left: 0px;
+  }
+
+  .ball1 {
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+    top: 440px;
+    left: 70px;
+  }
+  .ball2 {
+    background-color: orange;
+    position: absolute;
+    z-index: 2;
+    top: 470px;
+    left: 125px;
+  }
+  .ball3 {
+    background-color: yellow;
+    position: absolute;
+    z-index: 3;
+    top: 490px;
+    left: 170px;
+  }
+  .ball4 {
+    background-color: green;
+    position: absolute;
+    z-index: 4;
+    top: 525px;
+    left: 190px;
+  }
+  .ball5 {
+    background-color: blue;
+    position: absolute;
+    z-index: 6;
+    top: 535px;
+    left: 250px;
+  }
+}
